@@ -69,7 +69,7 @@ struct ConfirmView: View {
                             }
                         }
                         .padding()
-                        .background(Color(uiColor: .secondarySystemBackground))
+                        .background(Color.appCardBackground)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                     }
 
@@ -103,7 +103,9 @@ struct ConfirmView: View {
 
                                 TextField("Amount", text: $viewModel.amountText)
                                     .font(.system(size: 36, weight: .bold, design: .rounded))
+                                    #if os(iOS)
                                     .keyboardType(.decimalPad)
+                                    #endif
                                     .multilineTextAlignment(.leading)
                             }
                             .padding(.vertical, 8)
@@ -120,7 +122,7 @@ struct ConfirmView: View {
                             }
                         }
                         .padding()
-                        .background(Color(uiColor: .secondarySystemBackground))
+                        .background(Color.appCardBackground)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                     }
                 }
@@ -136,7 +138,6 @@ struct ConfirmView: View {
                     HStack {
                         if viewModel.isProcessing {
                             ProgressView()
-                                .tint(.white)
                                 .padding(.trailing, 4)
                             Text("Processing...")
                         } else {
@@ -153,10 +154,12 @@ struct ConfirmView: View {
                 .padding(.horizontal)
                 .padding(.vertical, 12)
             }
-            .background(Color(uiColor: .systemBackground))
+            .background(Color.appBackground)
         }
         .navigationTitle("Confirm Top-up")
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
         .navigationDestination(isPresented: $viewModel.navigateToResult) {
             if let tx = viewModel.currentTransaction, let res = viewModel.transactionResult {
                 ResultView(

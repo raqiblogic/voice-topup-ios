@@ -81,7 +81,7 @@ struct ResultView: View {
                 }
             }
             .padding()
-            .background(Color(uiColor: .secondarySystemBackground))
+            .background(Color.appCardBackground)
             .clipShape(RoundedRectangle(cornerRadius: 14))
             .padding(.horizontal)
 

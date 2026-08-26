@@ -26,6 +26,7 @@
 		AA0000020000000000000011 /* AliasStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000010000000000000011 /* AliasStore.swift */; };
 		AA0000020000000000000012 /* PhoneNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000010000000000000012 /* PhoneNormalizer.swift */; };
 		AA0000020000000000000013 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000010000000000000013 /* Secrets.swift */; };
+		AA0000020000000000000015 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000010000000000000015 /* Color+Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AA0000010000000000000012 /* PhoneNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNormalizer.swift; sourceTree = "<group>"; };
 		AA0000010000000000000013 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		AA0000010000000000000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0000010000000000000015 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				AA0000010000000000000012 /* PhoneNormalizer.swift */,
 				AA0000010000000000000013 /* Secrets.swift */,
+				AA0000010000000000000015 /* Color+Theme.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				AA0000020000000000000011 /* AliasStore.swift in Sources */,
 				AA0000020000000000000012 /* PhoneNormalizer.swift in Sources */,
 				AA0000020000000000000013 /* Secrets.swift in Sources */,
+				AA0000020000000000000015 /* Color+Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +313,9 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -361,6 +368,9 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -386,6 +396,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.voicetopup.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,6 +425,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.voicetopup.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

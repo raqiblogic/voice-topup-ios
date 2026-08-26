@@ -20,11 +20,15 @@ final class ContactsService {
 
     private var isAuthorized: Bool {
         let status = CNContactStore.authorizationStatus(for: .contacts)
+        #if os(iOS)
         if #available(iOS 18.0, *) {
             return status == .authorized || status == .limited
         } else {
             return status == .authorized
         }
+        #else
+        return status == .authorized
+        #endif
     }
 
     func requestAccess() async -> Bool {

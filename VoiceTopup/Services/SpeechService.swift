@@ -44,11 +44,19 @@ final class SpeechService {
             return false
         }
 
+        #if os(iOS)
         let micGranted = await AVAudioApplication.requestRecordPermission()
         guard micGranted else {
             self.errorMessage = "Microphone permission denied."
             return false
         }
+        #else
+        let micGranted = await AVCaptureDevice.requestAccess(for: .audio)
+        guard micGranted else {
+            self.errorMessage = "Microphone permission denied."
+            return false
+        }
+        #endif
 
         return true
     }
@@ -74,7 +82,7 @@ final class SpeechService {
         request.shouldReportPartialResults = true
         self.recognitionRequest = request
 
-        // Audio session
+        #if os(iOS)
         do {
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(.record, mode: .measurement, options: .duckOthers)
@@ -84,6 +92,7 @@ final class SpeechService {
             cleanup()
             return
         }
+        #endif
 
         let inputNode = engine.inputNode
         let format = inputNode.outputFormat(forBus: 0)
@@ -143,7 +152,9 @@ final class SpeechService {
         recognitionTask?.cancel()
         recognitionTask = nil
 
+        #if os(iOS)
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        #endif
     }
 
     deinit {

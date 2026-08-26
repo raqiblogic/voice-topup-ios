@@ -98,12 +98,14 @@ struct AliasSettingsView: View {
                 }
             }
             .navigationTitle("Contact Aliases")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .cancellationAction) {
                     Button("Done") { dismiss() }
                 }
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     if !isAddingAlias {
                         Button {
                             isAddingAlias = true

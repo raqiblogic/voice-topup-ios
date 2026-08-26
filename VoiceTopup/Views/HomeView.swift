@@ -31,7 +31,6 @@ struct HomeView: View {
                                 } label: {
                                     if viewModel.isQuickReloading {
                                         ProgressView()
-                                            .tint(.white)
                                             .padding(.horizontal, 12)
                                     } else {
                                         HStack(spacing: 4) {
@@ -47,7 +46,7 @@ struct HomeView: View {
                                 .disabled(viewModel.isQuickReloading)
                             }
                             .padding()
-                            .background(Color(uiColor: .secondarySystemBackground))
+                            .background(Color.appCardBackground)
                             .clipShape(RoundedRectangle(cornerRadius: 12))
                         }
                         .padding(.horizontal)
@@ -122,7 +121,7 @@ struct HomeView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 24)
-                        .background(Color(uiColor: .secondarySystemBackground))
+                        .background(Color.appCardBackground)
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                     }
                     .padding(.horizontal)
@@ -152,7 +151,7 @@ struct HomeView: View {
                             }
                         }
                         .padding(12)
-                        .background(Color(uiColor: .secondarySystemBackground))
+                        .background(Color.appCardBackground)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
 
                         // Search Results List
@@ -188,7 +187,7 @@ struct HomeView: View {
                                     }
                                 }
                             }
-                            .background(Color(uiColor: .secondarySystemBackground))
+                            .background(Color.appCardBackground)
                             .clipShape(RoundedRectangle(cornerRadius: 12))
                         }
                     }
@@ -198,7 +197,7 @@ struct HomeView: View {
             }
             .navigationTitle("VoiceTopup")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     Button {
                         viewModel.showSettings = true
                     } label: {
