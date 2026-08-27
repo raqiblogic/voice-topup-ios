@@ -16,3 +16,4 @@ VoiceTopup/Utilities/Secrets.swift
 # Swift Package Manager
 .build/
 Packages/
+Dist/
